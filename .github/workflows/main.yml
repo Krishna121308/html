@@ -1,0 +1,22 @@
+name: My First Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show files
+        run: ls
+
+      - name: Test
+        run: echo "GitHub Actions is working!"
